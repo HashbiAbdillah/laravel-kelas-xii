@@ -150,6 +150,11 @@
                 </div>
                 <div class="media-body">
                   <p>{{ $comment->comment }}</p>
+                  <form action="{{ route('komentar.destroy', $comment->id) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-sm btn-danger my-1">Hapus</button>
+                  </form>
                 </div>
               </div>
             @endforeach

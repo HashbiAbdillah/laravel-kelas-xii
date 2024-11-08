@@ -21,3 +21,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('authenticate', 'authenticate')->name('login.authenticate');
     Route::post('logout', 'logout')->name('login.logout');
 });
+
+route::post('/movies/{film}/kritik', [KritikController::class, 'store'])->name('kritik.store');
+Route::delete('/movie-show/kritik', [KritikController::class, 'destroy'])->name('komentar.destroy');
+
